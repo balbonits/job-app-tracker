@@ -1,0 +1,95 @@
+/* App layout for the job tracker. Every color, space and type value comes from Ember UI tokens. */
+html { background: var(--color-bg); }
+body { margin: 0; background: var(--color-bg); color: var(--text); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible, h1:focus-visible, main:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+h1:focus, main:focus { outline: none; }
+h1 { font-size: var(--text-2xl); line-height: var(--leading-tight); margin: 0; }
+h2 { font-size: var(--text-lg); margin: 0 0 var(--space-3); }
+p { margin: 0; }
+
+.jt-app { min-height: 100vh; display: flex; flex-direction: column; }
+.jt-skip { position: absolute; left: var(--space-2); top: -60px; background: var(--surface); padding: var(--space-2) var(--space-3); border-radius: var(--radius); z-index: 10; }
+.jt-skip:focus { top: var(--space-2); }
+.jt-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-subtle); background: var(--surface); }
+.jt-brand { font-weight: var(--weight-semibold); color: var(--text); text-decoration: none; }
+.jt-header ul { list-style: none; display: flex; gap: var(--space-1); margin: 0; padding: 0; flex-wrap: wrap; }
+.jt-header nav a { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 44px; padding: 0 var(--space-3); border-radius: var(--radius); color: var(--text-muted); text-decoration: none; font-size: var(--text-sm); font-weight: var(--weight-medium); }
+.jt-header nav a:hover { background: var(--surface-muted); color: var(--text); }
+.jt-header nav a[aria-current="page"] { color: var(--text); background: var(--accent-soft); }
+.jt-badge { min-width: 20px; height: 20px; padding: 0 6px; border-radius: var(--radius-full); background: var(--accent); color: var(--accent-contrast); font-size: var(--text-xs); display: inline-grid; place-items: center; }
+.jt-demo-note { padding: var(--space-2) var(--space-4); font-size: var(--text-xs); color: var(--text-muted); background: var(--surface-muted); }
+.jt-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); margin: var(--space-4) var(--space-4) 0; padding: var(--space-3) var(--space-4); border: 1px solid var(--danger); border-left-width: 4px; border-radius: var(--radius); background: var(--surface); font-size: var(--text-sm); }
+.jt-main { flex: 1; width: 100%; max-width: 1280px; margin: 0 auto; padding: var(--space-5) var(--space-4) var(--space-10); box-sizing: border-box; }
+.jt-footer { padding: var(--space-4); border-top: 1px solid var(--border-subtle); font-size: var(--text-xs); color: var(--text-muted); }
+
+.jt-pagehead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-4); }
+.jt-muted { color: var(--text-muted); font-size: var(--text-sm); }
+.jt-count { color: var(--text-muted); font-weight: var(--weight-regular); font-size: var(--text-sm); }
+.jt-row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+/* Board */
+.jt-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 0.8fr); gap: var(--space-4); align-items: start; }
+.jt-column { background: var(--surface-muted); border-radius: var(--radius); padding: var(--space-3); min-width: 0; }
+.jt-colhead { font-size: var(--text-sm); font-weight: var(--weight-semibold); margin: 0 0 var(--space-3); display: inline; }
+.jt-column > .jt-colhead { display: block; }
+.jt-closed summary { cursor: pointer; margin-bottom: var(--space-3); }
+.jt-colempty { padding: var(--space-2) 0; }
+.jt-cards { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.jt-card { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-1); }
+.jt-card-company { font-size: var(--text-xs); color: var(--text-muted); }
+.jt-card-title { font-size: var(--text-base); margin: 0; overflow-wrap: anywhere; }
+.jt-card-title a { color: var(--text); }
+.jt-card-age { font-size: var(--text-sm); color: var(--text-muted); }
+.jt-chip { align-self: flex-start; font-size: var(--text-xs); padding: 2px var(--space-2); border-radius: var(--radius); background: var(--accent-soft); color: var(--text); }
+.jt-card-actions { display: flex; justify-content: flex-end; }
+.jt-menu { display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-2); border-top: 1px solid var(--border-subtle); }
+.em-tablist { overflow-x: auto; }
+
+/* Empty and loading */
+.jt-empty { border: 1px dashed var(--border); border-radius: var(--radius); padding: var(--space-8) var(--space-4); display: flex; flex-direction: column; align-items: center; gap: var(--space-4); text-align: center; }
+.jt-empty-title { font-size: var(--text-lg); max-width: 40ch; }
+.jt-skeleton { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-3); }
+.jt-skel-card { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }
+.jt-skel-line { display: block; height: 12px; border-radius: var(--radius-full); background: var(--surface-muted); }
+.jt-linkbtn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-4); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text); font-weight: var(--weight-medium); font-size: var(--text-sm); text-decoration: none; }
+.jt-linkbtn:hover { background: var(--surface-muted); }
+
+/* Role detail */
+.jt-back { margin-bottom: var(--space-3); font-size: var(--text-sm); }
+.jt-back a { display: inline-flex; align-items: center; min-height: 44px; }
+.jt-detailhead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
+.jt-sub { color: var(--text-muted); margin-top: var(--space-1); }
+.jt-detailtools { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-3); }
+.jt-overview { display: grid; gap: var(--space-4); max-width: 560px; }
+.jt-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-3); margin: 0; }
+.jt-facts dt { font-size: var(--text-xs); color: var(--text-muted); }
+.jt-facts dd { margin: 0; font-weight: var(--weight-medium); }
+.jt-textarea { min-height: 140px; padding: var(--space-2) var(--space-3); resize: vertical; font: inherit; }
+.jt-timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); }
+.jt-timeline li { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); padding: var(--space-2) var(--space-4); }
+.jt-tl-stage { font-weight: var(--weight-medium); min-width: 110px; }
+.jt-timeline time { color: var(--text-muted); font-size: var(--text-sm); }
+
+/* Reminders */
+.jt-group { margin-top: var(--space-5); }
+.jt-overdue { color: var(--danger); }
+.jt-reminders { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.jt-reminder { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-3); background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.jt-rem-text { font-weight: var(--weight-medium); }
+
+/* Settings and forms */
+.jt-settings { display: grid; gap: var(--space-6); max-width: 640px; margin-top: var(--space-4); }
+.jt-settings section { display: grid; gap: var(--space-2); justify-items: start; }
+.jt-settings h2 { margin: 0; }
+.jt-links { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-1); }
+.jt-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.jt-form { display: grid; gap: var(--space-4); }
+.jt-demo-note a { color: var(--text); }
+
+/* Touch targets: standalone links and toggles are at least 44px tall (mobile-first DONE). */
+.jt-brand, .jt-back a, .jt-count-link { display: inline-flex; align-items: center; min-height: 44px; }
+.jt-count-link { min-width: 44px; }
+.jt-card-title a { display: flex; align-items: center; min-height: 44px; }
+.jt-closed summary { display: flex; align-items: center; min-height: 44px; }
