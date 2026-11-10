@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Job tracker wireframes (low fidelity)</title>
+<style>
+body{font:14px/1.4 ui-monospace,Menlo,monospace;background:#f4f4f4;color:#222;margin:24px}
+h1{font-size:18px} .row{display:flex;gap:24px;flex-wrap:wrap}
+.f{width:300px;background:#fff;border:2px solid #222;padding:12px;display:flex;flex-direction:column;gap:8px}
+.f h2{font-size:13px;margin:0 0 4px;text-transform:uppercase;letter-spacing:.05em}
+.b{border:1.5px solid #555;padding:6px 8px;border-radius:4px}.d{border-style:dashed}.p{background:#222;color:#fff;text-align:center}
+.h{display:flex;justify-content:space-between;align-items:center;gap:6px}.tabs{display:flex;gap:4px;font-size:12px}.tabs span{border-bottom:2px solid #999;padding:2px 4px}.tabs span:first-child{border-color:#222;font-weight:bold}
+.m{color:#666;font-size:12px}.chip{border:1px solid #888;border-radius:10px;padding:1px 6px;font-size:11px;align-self:flex-start}
+</style></head><body>
+<h1>Job tracker: text wireframes rendered as low-fi frames (mobile first, 320px)</h1>
+<div class="row">
+<div class="f"><h2>Board</h2>
+<div class="h"><b>Applications</b><span class="b p">Add role</span></div>
+<div class="m">Reminders (2)</div>
+<div class="tabs"><span>Saved</span><span>Applied</span><span>Interviewing</span><span>Offer</span><span>Closed</span></div>
+<div class="b"><div class="m">Company</div><b>Title</b><div class="m">Applied 6 days ago</div><div class="chip">next reminder</div><div class="h"><span></span><span class="b">Move to… / Edit / Delete</span></div></div>
+<div class="b"><div class="m">Company</div><b>Title</b><div class="m">Saved yesterday</div></div>
+</div>
+<div class="f"><h2>Role detail</h2>
+<div class="m">← Back to board</div><b>Title</b><div class="m">Company</div>
+<div class="h"><span class="b">Stage ▾</span><span class="b">Open posting</span></div>
+<div class="tabs"><span>Overview</span><span>Notes</span><span>Timeline</span></div>
+<div class="b d">Applied date · Updated date<br>Salary range<br>Contacts</div>
+<div class="b d">Notes textarea — "Saved"</div>
+</div>
+<div class="f"><h2>Add role (modal)</h2>
+<div class="b">Job link (optional)</div><div class="b">Company *</div><div class="m">error under field</div><div class="b">Title *</div>
+<div class="b">Stage ▾ Saved</div><div>☐ Remind me + date</div>
+<div class="h"><span class="b">Cancel</span><span class="b p">Save role</span></div>
+</div>
+<div class="f"><h2>Reminders</h2>
+<b>Overdue</b><div class="b">Follow up with recruiter · role · date<br><span class="b">Mark done</span> <span class="b">Snooze 3 days</span></div>
+<b>Today</b><div class="b">Send thank-you note · role · date</div>
+<b>This week</b><div class="b d">…</div>
+<div class="m">Toast: "Reminder done" [Undo]</div>
+</div>
+<div class="f"><h2>States (every screen)</h2>
+<div class="b d">Empty: "No applications yet…" [Add role]</div>
+<div class="b d">Empty reminders: "Nothing due. You're caught up."</div>
+<div class="b d">Loading: static skeleton cards, no shimmer</div>
+<div class="b">⚠ Can't save changes on this device… [Export]</div>
+</div>
+</div></body></html>
