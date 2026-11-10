@@ -45,5 +45,12 @@ Dated devlog for UX Project 2. The case study's process section is written from 
 - [Accessibility Conformance Report](docs/ACR.md) (VPAT 2.5, 508 edition, self-assessed). It says plainly that no screen-reader pass has been done yet.
 - CI on GitHub Actions runs typecheck, lint, unit tests, build, the axe sweep and the e2e on every push and PR.
 
+## 2026-11-10 2:45 PM PT: Live on jdilig.me (v0.1.0)
+
+- Live at https://www.jdilig.me/ux/job-tracker/, with the case study at https://www.jdilig.me/ux/job-tracker/case-study (jdilig-me-v3 merge e8f285a). The site serves the exact tag build; BUILD.json reports v0.1.0 at c449ac8.
+- Live checks: axe ran 170 times (17 screens and states, at 1280, 900, 414, 375 and 320, light and dark) with 0 serious or critical issues, no page-level overflow and every target at least 44px. The keyboard e2e passes (skip link, dialog focus, focus return after Esc).
+- Final screenshots are in docs/screenshots/ with the 2026-11-10-final prefix.
+- Still to come: this build uses Ember UI v0.2.1. It gets retrofitted onto v0.3.0 once the theme (R-2) and motion (R-3) work lands, along with the B-1 and B-2 fixes. The screen-reader pass (Orca on Linux) and an iPhone VoiceOver follow-up are still open.
+
 ## Design log (Chief of Creatives)
 _Chief of Creatives adds their entries here._
