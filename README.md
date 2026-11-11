@@ -20,7 +20,7 @@ All companies in the demo data are fictional. Data lives only in your browser's 
 
 ## Accessibility
 
-Built with Ember UI (installed from the tag `v0.2.1`) components (Button, Input, Select, Checkbox, Modal, Tabs, Toast). Full keyboard use. A route change updates the title, moves focus to the page heading and resets scroll, and Back restores it. Toasts use live regions. Targets aim for 44px, and all meet WCAG 2.5.8 (24px).
+Built with Ember UI (installed from the tag `v0.2.2`) components (Button, Input, Select, Checkbox, Modal, Tabs, Toast). Full keyboard use. A route change updates the title, moves focus to the page heading and resets scroll, and Back restores it. Toasts use live regions. Targets aim for 44px, and all meet WCAG 2.5.8 (24px).
 
 - `npm run test:a11y` runs axe on every screen and state at 1280, 900, 414, 375 and 320 px in light and dark mode. It fails on any serious or critical issue, any horizontal overflow, or any control whose rendered box is under 44 px. It measures each control's rendered box, so it doesn't detect a hit area clipped by an ancestor's overflow: the Ember v0.2.2 stage and role tabs clip to 43px until the Ember tab patch lands (tracked as TRACKER-EMBER-BUMP).
 - `npm run test:e2e` runs the keyboard-only and route-change checks.

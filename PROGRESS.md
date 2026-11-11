@@ -99,3 +99,8 @@ From the UI Copywriter's review (ux-projects/copy/JOB-TRACKER-COPY-REVIEW.md):
 - F6: the clear-data dialog says "1 role" for a single role.
 - Commits are authored as John Dilig with an `Author-bot: Full Stack Developer` trailer from here on (CTE ruling).
 F1 to F3 are case-study copy on jdilig.me and go in a separate jdilig-me-v3 PR.
+
+## 2026-11-10 11:55 PM PT: TRACKER-README-FIX
+
+- README now says Ember UI is installed from the tag `v0.2.2`, matching package.json (it said `v0.2.1`). Earlier dated entries that name v0.2.1 stay as written.
+- ACR 2.5.8 and 302.7 now say the Ember tabs are 43px effective because of an Ember v0.2.2 tablist clip. That was fixed upstream in a11y-design-system #36, and the note is removed when the tracker moves to Ember v0.3 (card TRACKER-EMBER-V03, waiting on a Creatives theme).
