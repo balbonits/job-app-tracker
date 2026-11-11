@@ -9,7 +9,7 @@ Based on VPAT® 2.5 Rev 508 edition (Section 508). **Self-assessed** by the buil
 - **Standards:** Revised Section 508 (36 CFR 1194), which incorporates WCAG 2.0 A/AA. This report also covers WCAG 2.2 A/AA.
 
 ## Evaluation methods
-- **Automated:** axe-core 4.x on 17 screens and states (board, role, reminders, settings, the modal and menu states, and the empty, loading and error states) at 1280, 900, 414, 375 and 320 px, in light and dark: 170 runs with 0 violations at any impact that fail the build. The same script also checks for horizontal overflow and for controls under 44x44 px (`scripts/a11y.mjs`).
+- **Automated:** axe-core 4.x on 17 screens and states (board, role, reminders, settings, the modal and menu states, and the empty, loading and error states) at 1280, 900, 414, 375 and 320 px, in light and dark: 170 runs with 0 violations at any impact that fail the build. The same script also checks for horizontal overflow and for controls whose rendered box is under 44x44 px (`scripts/a11y.mjs`). It measures each control's rendered box, so it doesn't detect a hit area clipped by an ancestor's overflow: the Ember v0.2.2 stage and role tabs clip to 43px until the Ember tab patch lands (tracked as TRACKER-EMBER-BUMP).
 - **Keyboard and focus:** scripted keyboard-only flows in Chromium (`scripts/e2e.mjs`). They cover the skip link, focus on the H1 after a route change, the title on every route, scroll restore on Back, and dialog focus in and return on Esc.
 - **Lighthouse:** accessibility 100.
 - **Screen reader:** **not yet evaluated** with a screen reader. Until a reader pass is recorded in PROGRESS.md (naming the reader, browser and OS), items that depend on announcements, such as 4.1.3, rest on markup and automated checks only.
@@ -59,7 +59,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 2.5.3 Label in Name | A | Supports | Accessible names start with the visible label text. |
 | 2.5.4 Motion Actuation | A | Not Applicable | No motion input. |
 | 2.5.7 Dragging Movements | AA | Supports | No dragging. Stage changes use Move to. |
-| 2.5.8 Target Size (Minimum) | AA | Supports | Standalone controls are at least 44x44 CSS px, which the automated sweep checks. Inline links in sentences are exempt. |
+| 2.5.8 Target Size (Minimum) | AA | Supports | Targets aim for 44px, and all meet WCAG 2.5.8 (24px). Inline links in sentences are exempt. |
 | 3.1.1 Language of Page | A | Supports | lang="en". |
 | 3.1.2 Language of Parts | AA | Not Applicable | No other-language passages. |
 | 3.2.1 On Focus | A | Supports | Focus causes no context change. |
@@ -85,7 +85,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 302.4 Without Hearing | Not Applicable | No audio. |
 | 302.5 With Limited Hearing | Not Applicable | No audio. |
 | 302.6 Without Speech | Not Applicable | No speech input. |
-| 302.7 With Limited Manipulation | Supports | Fully keyboard operable, 44 px targets, no drag or timing. |
+| 302.7 With Limited Manipulation | Supports | Fully keyboard operable, targets aim for 44px and all meet WCAG 2.5.8 (24px), no drag or timing. |
 | 302.8 With Limited Reach and Strength | Supports | Same as 302.7. |
 | 302.9 With Limited Language, Cognitive, and Learning Abilities | Supports | Plain labels, Undo on destructive actions, inline error help. |
 
