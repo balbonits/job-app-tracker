@@ -104,3 +104,8 @@ F1 to F3 are case-study copy on jdilig.me and go in a separate jdilig-me-v3 PR.
 
 - README now says Ember UI is installed from the tag `v0.2.2`, matching package.json (it said `v0.2.1`). Earlier dated entries that name v0.2.1 stay as written.
 - ACR 2.5.8 and 302.7 now say the Ember tabs are 43px effective because of an Ember v0.2.2 tablist clip. That was fixed upstream in a11y-design-system #36, and the note is removed when the tracker moves to Ember v0.3 (card TRACKER-EMBER-V03, waiting on a Creatives theme).
+
+## 2026-11-11 1:10 AM PT: FU-TRACKER-ACR-302.7
+
+- ACR 302.7 said 'aim for 44px' twice. It now says it once: "Targets aim for 44px, and all meet WCAG 2.5.8 (24px)", matching README and jdilig.me's copy, followed by the Ember tab note.
+- ACR 2.5.8 and 302.7 now end with the same wording as the dashboard's 2.5.8 row: "fixed upstream in a11y-design-system #36, to be removed when the tracker moves to Ember v0.3."

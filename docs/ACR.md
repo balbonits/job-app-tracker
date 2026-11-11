@@ -59,7 +59,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 2.5.3 Label in Name | A | Supports | Accessible names start with the visible label text. |
 | 2.5.4 Motion Actuation | A | Not Applicable | No motion input. |
 | 2.5.7 Dragging Movements | AA | Supports | No dragging. Stage changes use Move to. |
-| 2.5.8 Target Size (Minimum) | AA | Supports | All targets meet WCAG 2.5.8 (24px), and inline links in sentences are exempt. The project aims for 44px; the Ember tabs are 43px effective due to an Ember v0.2.2 tablist clip, fixed upstream in a11y-design-system #36 and to be removed when the tracker moves to Ember v0.3. |
+| 2.5.8 Target Size (Minimum) | AA | Supports | All targets meet WCAG 2.5.8 (24px), and inline links in sentences are exempt. The project aims for 44px; the Ember tabs are 43px effective due to an Ember v0.2.2 tablist clip, fixed upstream in a11y-design-system #36, to be removed when the tracker moves to Ember v0.3. |
 | 3.1.1 Language of Page | A | Supports | lang="en". |
 | 3.1.2 Language of Parts | AA | Not Applicable | No other-language passages. |
 | 3.2.1 On Focus | A | Supports | Focus causes no context change. |
@@ -85,7 +85,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 302.4 Without Hearing | Not Applicable | No audio. |
 | 302.5 With Limited Hearing | Not Applicable | No audio. |
 | 302.6 Without Speech | Not Applicable | No speech input. |
-| 302.7 With Limited Manipulation | Supports | Fully keyboard operable, targets aim for 44px and all meet WCAG 2.5.8 (24px), no drag or timing. The project aims for 44px; the Ember tabs are 43px effective due to an Ember v0.2.2 tablist clip, fixed upstream in a11y-design-system #36 and to be removed when the tracker moves to Ember v0.3. |
+| 302.7 With Limited Manipulation | Supports | Fully keyboard operable, no drag or timing. Targets aim for 44px, and all meet WCAG 2.5.8 (24px); the Ember tabs are 43px effective due to an Ember v0.2.2 tablist clip, fixed upstream in a11y-design-system #36, to be removed when the tracker moves to Ember v0.3. |
 | 302.8 With Limited Reach and Strength | Supports | Same as 302.7. |
 | 302.9 With Limited Language, Cognitive, and Learning Abilities | Supports | Plain labels, Undo on destructive actions, inline error help. |
 
