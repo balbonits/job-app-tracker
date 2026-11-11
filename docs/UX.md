@@ -31,7 +31,7 @@ Text wireframes from the spec, rendered as low-fidelity frames in [wireframes.ht
 
 ![Low-fidelity wireframes for Board, Role detail, Add role, Reminders and states](screenshots/2026-11-10-wireframe-wireframes.png)
 
-- **Board:** header "Applications", Add role, Reminders badge. Tabs on mobile, five columns on desktop. Cards show company, title, stage age ("Applied 6 days ago"), the next reminder, and an Actions menu with Move to..., Edit and Delete. No drag-only moves.
+- **Board:** header "Applications", Add role, Reminders badge. Tabs on mobile, five columns on desktop. Cards show company, title, stage age ("Applied 6 days ago"), the next reminder, and a "Move or edit" button whose menu has Move to..., Edit and Delete. No drag-only moves.
 - **Role detail:** back to board, title and company, stage select, open posting link, tabs Overview, Notes (autosave with a "Saved" status) and Timeline.
 - **Add role (modal):** job link (optional), company and title (required), stage (default Saved), remind me with a date. Errors appear inline under each field.
 - **Reminders:** each row has the role, what to do, the date, Mark done and Snooze 3 days. Mark done shows a toast with Undo.

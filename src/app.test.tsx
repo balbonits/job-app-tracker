@@ -47,7 +47,7 @@ describe('board', () => {
     const u = userEvent.setup();
     renderApp();
     // Initech starts in Saved, the first tab on mobile.
-    await u.click(screen.getByRole('button', { name: /Actions for React Developer/ }));
+    await u.click(screen.getByRole('button', { name: /Move or edit React Developer/ }));
     await u.selectOptions(screen.getByLabelText('Move to...'), 'applied');
     await u.click(screen.getByRole('tab', { name: /Applied/ }));
     const card = screen.getByRole('article', { name: /React Developer at Initech/ });

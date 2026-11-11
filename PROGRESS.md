@@ -90,3 +90,12 @@ Dusk is this app's v3 identity on Ember UI, designed in balbonits/a11y-design-sy
 
 ![Dusk Board at 375px, light, annotated](https://raw.githubusercontent.com/balbonits/a11y-design-system/748d492/docs/directions/v3/dusk/handoff/dusk-tracker-375-light-annotated.png)
 ![Dusk Board at 1440px, dark, annotated](https://raw.githubusercontent.com/balbonits/a11y-design-system/748d492/docs/directions/v3/dusk/handoff/dusk-tracker-1440-dark-annotated.png)
+
+## 2026-11-10 7:11 PM PT: copy review must-fixes F4 to F6
+
+From the UI Copywriter's review (ux-projects/copy/JOB-TRACKER-COPY-REVIEW.md):
+- F4: the card age line now reads "Started interviewing 3 days ago" and "Got an offer 2 days ago" (STAGE_VERB in src/screens/Board.tsx), not "Interviewing since 3 days ago" and "Offer 2 days ago".
+- F5: the card button is "Move or edit", and its accessible name is "Move or edit {title} at {company}", so the visible text starts the name (2.5.3). docs/UX.md, docs/ACR.md, the unit test and scripts/a11y.mjs are updated to match.
+- F6: the clear-data dialog says "1 role" for a single role.
+- Commits are authored as John Dilig with an `Author-bot: Full Stack Developer` trailer from here on (CTE ruling).
+F1 to F3 are case-study copy on jdilig.me and go in a separate jdilig-me-v3 PR.
