@@ -68,7 +68,9 @@ Bumped ember-ui to v0.2.2 (Architecture review B-1, B-2): small buttons and chec
 - The "Skip to content" link was 40px tall. A `::before` now extends its hit area to 44px (2px above and below), the same technique as jdilig.me PR #25. There's no visual change: the link still draws at 136x40, and screenshots of it focused at 320px are pixel-identical before and after.
 - Checked: clicks 1.5px above and below the visible box now land on the link (before, they hit the header). Lint, typecheck, unit tests 15/15, axe 170 runs with 0 failing, and the e2e skip-link check passes.
 
-## 2026-11-10 PM PT: skip link no longer covers the brand (TRACKER-BRAND, proposal)
+## 2026-11-10 PM PT: skip link no longer covers the brand (TRACKER-BRAND)
 - axe flagged target-size on the "Job tracker" brand link while the skip link was focused: the floating skip link (136x40 at 8,8) covered all but an 8px strip of the brand (89x44 at 16,12). No invisible fix exists, because axe counts the focused overlay itself.
-- Proposal: while focused, the skip link sits in the page flow above the header instead of floating over it, so the header moves down about 56px only while it has focus. Unfocused pages are pixel-identical to main at 320/375/1280 in light and dark. Pending Chief of Creatives' sign-off.
+- Proposal: while focused, the skip link sits in the page flow above the header instead of floating over it, so the header moves down about 56px only while it has focus. Unfocused pages are pixel-identical to main at 320/375/1280 in light and dark. Signed off by Chief of Creatives with three conditions, all checked in e2e: the shift is instant (no transition), the band behind the link is the page background token, and after activation focus lands on main and the band collapses.
+
+![Skip link focused, dark, 375px](docs/screenshots/2026-11-10-tracker-brand-dark-375.png)
 - Checked: axe clean focused and unfocused, skip link 44px hit area at all widths, lint, typecheck, unit 15/15, axe 170 runs 0 failing, e2e pass.

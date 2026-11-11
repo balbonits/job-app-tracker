@@ -11,7 +11,7 @@ p { margin: 0; }
 
 .jt-app { min-height: 100vh; display: flex; flex-direction: column; }
 .jt-skip { position: absolute; left: var(--space-2); top: -60px; background: var(--surface); padding: var(--space-2) var(--space-3); border-radius: var(--radius); z-index: 10; }
-/* While focused, the skip link sits in the page flow above the header instead of floating over it, so it never covers the brand link (axe target-size, WCAG 2.5.8). Proposal pending Creatives (TRACKER-BRAND). */
+/* While focused, the skip link sits in the page flow above the header instead of floating over it, so it never covers the brand link (axe target-size, WCAG 2.5.8). Signed off by Creatives (TRACKER-BRAND): the shift is instant (no transition), and the band collapses on blur. */
 .jt-skip:focus { position: relative; top: 0; left: 0; align-self: flex-start; margin: var(--space-2); }
 /* WCAG 2.5.8 / our 44px target rule: the hit area grows to at least 44px tall with no visual change (same ::before technique as jdilig.me PR #25). */
 .jt-skip::before { content: ''; position: absolute; inset-inline: 0; top: min(0px, (100% - 44px) / 2); bottom: min(0px, (100% - 44px) / 2); }
