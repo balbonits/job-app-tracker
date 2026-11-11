@@ -4,6 +4,7 @@ import { writeFileSync } from 'node:fs';
 export const CSS = `
 .jt-stagetabs { position: relative; }
 .jt-stagetabs .em-tablist { scroll-padding-inline: 40px; }
+.jt-stagetabs .em-tab:focus-visible { outline-offset: -4px; } /* inset ring: the scrolling list clips anything outside a tab */
 .jt-cue { position: absolute; top: 0; height: 43px; width: 32px; display: grid; place-items: center; background: var(--color-bg); color: var(--text-muted); pointer-events: none; opacity: 0; transition: opacity var(--duration-fast) var(--ease-standard); }
 .jt-cue svg { width: 16px; height: 16px; }
 .jt-cue--start { inset-inline-start: 0; border-inline-end: 1px solid var(--border-subtle); }
@@ -13,6 +14,7 @@ export const CSS = `
 .jt-card-actions .em-btn[aria-expanded="true"] { background: var(--accent-soft); }
 .jt-card-actions .em-btn[aria-expanded="true"] .jt-chev { transform: rotate(180deg); }
 @media (prefers-reduced-motion: reduce) { .jt-cue, .jt-card-actions .em-btn .jt-chev { transition: none; } }
+@media (forced-colors: active) { .jt-cue { background: Canvas; color: CanvasText; } }
 `;
 const CHEV = (d) => `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
 export async function inject(p) {

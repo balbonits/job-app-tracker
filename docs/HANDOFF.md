@@ -64,6 +64,7 @@ CSS (`src/app.css`; every value is an existing token):
 ```css
 .jt-stagetabs { position: relative; }
 .jt-stagetabs .em-tablist { scroll-padding-inline: 40px; } /* 32px plate + 8px, so scrollIntoView clears the cue */
+.jt-stagetabs .em-tab:focus-visible { outline-offset: -4px; } /* inset ring: the scrolling list clips anything outside a tab */
 .jt-cue { position: absolute; top: 0; height: 43px; width: 32px; display: grid; place-items: center;
   background: var(--color-bg); color: var(--text-muted); pointer-events: none; opacity: 0;
   transition: opacity var(--duration-fast) var(--ease-standard); }
@@ -72,7 +73,21 @@ CSS (`src/app.css`; every value is an existing token):
 .jt-cue--end { inset-inline-end: 0; border-inline-start: 1px solid var(--border-subtle); }
 .jt-stagetabs[data-more-start] .jt-cue--start, .jt-stagetabs[data-more-end] .jt-cue--end { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .jt-cue { transition: none; } }
+@media (forced-colors: active) { .jt-cue { background: Canvas; color: CanvasText; } }
 ```
+
+- **Inset focus ring (Creatives, 2026-11-11).** `.em-tablist` has `overflow-x: auto`, which also clips vertically. So
+  Ember's ring (2px, offset +2px) was cut off above and below every tab, and at the list's edges: only the side slivers
+  showed. Measured on the prototype without this rule, 44 ring checks failed (`ring.mjs --before`). Inside the stage
+  tabs only, the ring moves 2..4px inside the tab, so all four sides sit within the list's clip box. It also sits just
+  above the 2px `--accent` underline, so the selected tab still shows both. The tab height (44px), padding and target
+  don't change.
+  - Ring contrast against the tab's background: `--focus` on `--color-bg` is 6.41 light and 11.29 dark, and on hover
+    (`--surface-muted`) it's 5.70 and 9.27.
+  - `scroll-padding-inline: 40px` keeps the focused tab, ring included, clear of both plates.
+  - Padding-block on the list was the other option. It would push the list's bottom border 4px below the tabs, so it
+    would detach the selected underline from the border. It would also still clip the first tab's ring at the
+    list's start edge.
 
 - The plate is 43px tall, not 44, so the tablist's 1px bottom border stays visible under it.
 - Chevrons: 16x16 SVG, `viewBox="0 0 16 16"`, `fill="none"`, `stroke="currentColor"`, `stroke-width="2"`, round caps and
@@ -94,7 +109,7 @@ States:
 Tab states are Ember's and unchanged:
 - default `--text-muted`;
 - hover `--text` on `--surface-muted`;
-- focus-visible 2px `--focus` outline, offset 2px;
+- focus-visible is the 2px `--focus` outline, **inset** (offset -4px, above), with the whole ring visible;
 - selected `--text` with a 2px `--accent` underline;
 - pressed is the same as selected (activation is immediate);
 - disabled: not used here (every stage is enabled).
@@ -149,6 +164,17 @@ Target: 139x44 at every width (Ember's 44px `min-height`), right-aligned (`.jt-c
   ArrowRight x2 at 320 must fail.
 - **MP-3, cue contrast.** The plate's computed background is opaque (alpha 1) and equals `--color-bg`. The chevron's
   colour equals `--text-muted` and is at least 3:1 against the plate, in light and dark.
+  - **Forced-colors row (CA):** under `forced-colors: active`, the plate stays opaque (`Canvas`). The chevron's computed
+    stroke equals its `color` (`stroke="currentColor"`, `fill="none"`), with no SVG fill or stroke hard-coded.
+- **MP-8, focus ring unclipped (Creatives).**
+  - Enter the list with Tab, then walk Home, ArrowRight x4, ArrowLeft x2, Home, End, ArrowLeft and Home, at 320 and
+    375 in light and dark.
+  - After each key, the focused tab is at least 44px tall with a solid 2px outline. Its ring box (tab rect plus
+    `outline-offset + outline-width` on each side) sits inside the list's clip box (`clientLeft`/`clientTop` plus
+    `clientWidth`/`clientHeight`), and doesn't intersect any shown plate.
+  - Negative check: force `outline-offset: 2px` and it must fail.
+  - Reference: `docs/handoff/mobile-polish/ring.mjs`. With the spec it gives 192 pass, 0 fail (forced-colors row
+    included). With `--before` it gives 44 fail (`ring.txt`).
 - **MP-4, tablist pattern unchanged.** The arrows move the selection, exactly one tab has `tabIndex` 0, and Tab moves
   from the selected tab into the panel. axe shows 0 serious or critical on the board at 320 and 375, light and dark.
 - **MP-5, Move or edit.**
@@ -164,17 +190,19 @@ Target: 139x44 at every width (Ember's 44px `min-height`), right-aligned (`.jt-c
 
 ### Shots (`docs/handoff/mobile-polish/`, lossless 8-bit RGB PNG)
 
-- `tracker-{320,375}-{light,dark}-mobile-polish.png` are at 2x with reduced motion. They have numbered panels: (1) main
+- `tracker-{320,375}-{light,dark}-mobile-polish.png` were re-shot after the inset ring; panels 3 and 4 show the whole
+  ring. They're at 2x with reduced motion. They have numbered panels: (1) main
   before; (2) at the start; (3) the middle, from the keyboard; (4) the end; (5) Move or edit hovered; (6)
   focus-visible; (7) expanded. A legend underneath gives the measured plate, colours, scroll sizes and the
   selected-tab position.
 - `tracker-600-light-*` shows no overflow, so no cue. `tracker-1280-{light,dark}-*` shows the columns, with the button in
   every card.
 - Reproduce: `npm run build && npx vite preview --host 127.0.0.1 --port 4291`, then `mkdir -p /tmp/tr/handoff`. Copy
-  the four `.mjs` files into a folder inside the repo, so `playwright-core` resolves, and run them there:
+  the `.mjs` files into a folder inside the repo, so `playwright-core` resolves, and run them there:
   - `node probe.mjs` writes the before shots `/tmp/tr/now-*.png`;
   - `node shoot.mjs` writes `/tmp/tr/shots/` and `meta.json`;
-  - `node wide.mjs` writes the 600 and 1280 shots.
+  - `node wide.mjs` writes the 600 and 1280 shots;
+  - `node ring.mjs` (and `--before`) runs the MP-8 and forced-colors probe.
 
   Then `cd /tmp/tr && python3 <repo>/docs/handoff/mobile-polish/compose.py /tmp/tr/handoff`. `proto.mjs` injects this spec's CSS and DOM into the built
   app. It's a reference for the builder, not app code.

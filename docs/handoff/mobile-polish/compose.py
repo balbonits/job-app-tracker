@@ -18,7 +18,7 @@ for w in (320,375):
     legend=[f"{w}px {s}, 2x, prefers-reduced-motion: reduce. Prototype injected into the built app (proto.mjs); not app code.",
       f"Cue: aria-hidden plate {c['rect'][2]:.0f}x{c['rect'][3]:.0f}px in --color-bg {c['bg']}, chevron 16px stroke 2 in --text-muted {c['color']}, 1px --border-subtle edge; pointer-events none.",
       f"Tablist scrollWidth {st['scroll'][1]} > clientWidth {st['scroll'][2]}: cues follow scroll position, hidden at each end (2, 4) and when nothing overflows.",
-      f"3: selected tab {mid['sel'][0]} at x {mid['sel'][1]:.0f}..{mid['sel'][1]+mid['sel'][3]:.0f}, list {mid['list'][0]:.0f}..{mid['list'][0]+mid['list'][2]:.0f}: scrollIntoView nearest + scroll-padding-inline 40px keep it clear of both plates.",
+      f"3: selected tab {mid['sel'][0]} at x {mid['sel'][1]:.0f}..{mid['sel'][1]+mid['sel'][3]:.0f}, list {mid['list'][0]:.0f}..{mid['list'][0]+mid['list'][2]:.0f}: scrollIntoView nearest + scroll-padding-inline 40px keep it clear of both plates; focus ring inset (offset -4px), whole ring visible (3, 4).",
       f"5-7: Move or edit is Ember secondary + chevron: {fo['btn']['rect'][2]:.0f}x{fo['btn']['rect'][3]:.0f}px, border {st['btn']['border']}, hover bg {ho['btn']['bg']}, focus {fo['btn']['outline']}, expanded bg {ex['btn']['bg']}."]
     H=rows*(ph+50)+20+len(legend)*32+20
     o=Image.new('RGB',(W,H),(255,255,255)); d=ImageDraw.Draw(o)
