@@ -74,3 +74,19 @@ Bumped ember-ui to v0.2.2 (Architecture review B-1, B-2): small buttons and chec
 
 ![Skip link focused, dark, 375px](docs/screenshots/2026-11-10-tracker-brand-dark-375.png)
 - Checked: axe clean focused and unfocused, skip link 44px hit area at all widths, lint, typecheck, unit 15/15, axe 170 runs 0 failing, e2e pass.
+
+## 2026-11-10: Design: dusk identity (UX/UI Designer)
+Dusk is this app's v3 identity on Ember UI, designed in balbonits/a11y-design-system. Times are merge times in PT, from GitHub.
+- 5:59 PM PT: first dusk HANDOFF and prototype ([PR #14](https://github.com/balbonits/a11y-design-system/pull/14), `96b1fe2`).
+- 6:01 and 6:08 PM PT: Chief of Creatives' scope rulings recorded in the HANDOFF ([PR #18](https://github.com/balbonits/a11y-design-system/pull/18), `983ec14`), then kept in the HANDOFF source ([PR #19](https://github.com/balbonits/a11y-design-system/pull/19), `202b5da`).
+- 6:48 PM PT: rework into the job tracker Board, now the default view ([PR #22](https://github.com/balbonits/a11y-design-system/pull/22), `eec5773`).
+- Chief Architect signed dusk at `eec5773`, and Visual QA passed it at the same sha.
+- 6:55 PM PT: Known issues 5 to 7 RULED by Chief of Creatives: the Move button, Undo then Dismiss on the toast, and reminder chip text owned by Reminders ([PR #24](https://github.com/balbonits/a11y-design-system/pull/24), `f7fbc4a`).
+- 7:05 PM PT: Chief Architect's toast conditions, and focus after a delete moves to the next card in the column, or to the column heading when the column is empty ([PR #25](https://github.com/balbonits/a11y-design-system/pull/25), `6be00f5`). Visual QA passed `6be00f5`.
+- 7:15 PM PT: the conditions added to the HANDOFF's toast row, with refreshed annotated shots ([PR #26](https://github.com/balbonits/a11y-design-system/pull/26), `748d492`).
+- 7:24 PM PT: v3 README entry page for all three directions ([PR #28](https://github.com/balbonits/a11y-design-system/pull/28), `1835b93`).
+- Live prototype: [dusk Board](https://raw.githack.com/balbonits/a11y-design-system/main/docs/directions/v3/dusk/index.html). Spec: [dusk HANDOFF](https://github.com/balbonits/a11y-design-system/blob/main/docs/directions/v3/dusk/HANDOFF.md).
+- Next: the app build, by Full Stack Developer on `feat/dusk-theme`.
+
+![Dusk Board at 375px, light, annotated](https://raw.githubusercontent.com/balbonits/a11y-design-system/748d492/docs/directions/v3/dusk/handoff/dusk-tracker-375-light-annotated.png)
+![Dusk Board at 1440px, dark, annotated](https://raw.githubusercontent.com/balbonits/a11y-design-system/748d492/docs/directions/v3/dusk/handoff/dusk-tracker-1440-dark-annotated.png)
