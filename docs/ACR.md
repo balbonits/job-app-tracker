@@ -59,7 +59,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 2.5.3 Label in Name | A | Supports | Accessible names start with the visible label text. |
 | 2.5.4 Motion Actuation | A | Not Applicable | No motion input. |
 | 2.5.7 Dragging Movements | AA | Supports | No dragging. Stage changes use Move to. |
-| 2.5.8 Target Size (Minimum) | AA | Supports | Standalone controls are at least 44x44 CSS px, which the automated sweep checks. Inline links in sentences are exempt. |
+| 2.5.8 Target Size (Minimum) | AA | Supports | Targets aim for 44px, and all meet WCAG 2.5.8 (24px). Inline links in sentences are exempt. |
 | 3.1.1 Language of Page | A | Supports | lang="en". |
 | 3.1.2 Language of Parts | AA | Not Applicable | No other-language passages. |
 | 3.2.1 On Focus | A | Supports | Focus causes no context change. |
@@ -85,7 +85,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 302.4 Without Hearing | Not Applicable | No audio. |
 | 302.5 With Limited Hearing | Not Applicable | No audio. |
 | 302.6 Without Speech | Not Applicable | No speech input. |
-| 302.7 With Limited Manipulation | Supports | Fully keyboard operable, 44 px targets, no drag or timing. |
+| 302.7 With Limited Manipulation | Supports | Fully keyboard operable, targets aim for 44px and all meet WCAG 2.5.8 (24px), no drag or timing. |
 | 302.8 With Limited Reach and Strength | Supports | Same as 302.7. |
 | 302.9 With Limited Language, Cognitive, and Learning Abilities | Supports | Plain labels, Undo on destructive actions, inline error help. |
 
