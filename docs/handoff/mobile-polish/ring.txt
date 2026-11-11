@@ -1,0 +1,47 @@
+ring: 192 pass, 0 fail
+
+FAIL 320 light Home -> Saved (1): ring {"l":12,"t":249,"r":109.90625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light ArrowRight -> Applied (1): ring {"l":105.90625,"t":249,"r":213.015625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light ArrowRight -> Interviewing (1): ring {"l":130.015625,"t":249,"r":268.171875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light ArrowRight -> Offer (1): ring {"l":119.171875,"t":249,"r":209.6875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light ArrowRight -> Closed (1): ring {"l":205.6875,"t":249,"r":308.484375,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light ArrowLeft -> Offer (1): ring {"l":119.171875,"t":249,"r":209.6875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light ArrowLeft -> Interviewing (1): ring {"l":52.015625,"t":249,"r":190.171875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light Home -> Saved (1): ring {"l":12,"t":249,"r":109.90625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light End -> Closed (1): ring {"l":205.6875,"t":249,"r":308.484375,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light ArrowLeft -> Offer (1): ring {"l":119.171875,"t":249,"r":209.6875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 light Home -> Saved (1): ring {"l":12,"t":249,"r":109.90625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark Home -> Saved (1): ring {"l":12,"t":249,"r":109.90625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark ArrowRight -> Applied (1): ring {"l":105.90625,"t":249,"r":213.015625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark ArrowRight -> Interviewing (1): ring {"l":130.015625,"t":249,"r":268.171875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark ArrowRight -> Offer (1): ring {"l":119.171875,"t":249,"r":209.6875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark ArrowRight -> Closed (1): ring {"l":205.6875,"t":249,"r":308.484375,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark ArrowLeft -> Offer (1): ring {"l":119.171875,"t":249,"r":209.6875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark ArrowLeft -> Interviewing (1): ring {"l":52.015625,"t":249,"r":190.171875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark Home -> Saved (1): ring {"l":12,"t":249,"r":109.90625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark End -> Closed (1): ring {"l":205.6875,"t":249,"r":308.484375,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark ArrowLeft -> Offer (1): ring {"l":119.171875,"t":249,"r":209.6875,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 320 dark Home -> Saved (1): ring {"l":12,"t":249,"r":109.90625,"b":301} outside clip {"l":16,"t":253,"r":304,"b":296}
+FAIL 375 light Home -> Saved (1): ring {"l":12,"t":231,"r":109.90625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light ArrowRight -> Applied (1): ring {"l":105.90625,"t":231,"r":213.015625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light ArrowRight -> Interviewing (1): ring {"l":185.015625,"t":231,"r":323.171875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light ArrowRight -> Offer (1): ring {"l":174.171875,"t":231,"r":264.6875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light ArrowRight -> Closed (1): ring {"l":260.6875,"t":231,"r":363.484375,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light ArrowLeft -> Offer (1): ring {"l":174.171875,"t":231,"r":264.6875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light ArrowLeft -> Interviewing (1): ring {"l":52.015625,"t":231,"r":190.171875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light Home -> Saved (1): ring {"l":12,"t":231,"r":109.90625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light End -> Closed (1): ring {"l":260.6875,"t":231,"r":363.484375,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light ArrowLeft -> Offer (1): ring {"l":174.171875,"t":231,"r":264.6875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 light Home -> Saved (1): ring {"l":12,"t":231,"r":109.90625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark Home -> Saved (1): ring {"l":12,"t":231,"r":109.90625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark ArrowRight -> Applied (1): ring {"l":105.90625,"t":231,"r":213.015625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark ArrowRight -> Interviewing (1): ring {"l":185.015625,"t":231,"r":323.171875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark ArrowRight -> Offer (1): ring {"l":174.171875,"t":231,"r":264.6875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark ArrowRight -> Closed (1): ring {"l":260.6875,"t":231,"r":363.484375,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark ArrowLeft -> Offer (1): ring {"l":174.171875,"t":231,"r":264.6875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark ArrowLeft -> Interviewing (1): ring {"l":52.015625,"t":231,"r":190.171875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark Home -> Saved (1): ring {"l":12,"t":231,"r":109.90625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark End -> Closed (1): ring {"l":260.6875,"t":231,"r":363.484375,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark ArrowLeft -> Offer (1): ring {"l":174.171875,"t":231,"r":264.6875,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+FAIL 375 dark Home -> Saved (1): ring {"l":12,"t":231,"r":109.90625,"b":283} outside clip {"l":16,"t":235,"r":359,"b":278}
+ring --before: 132 pass, 44 fail
