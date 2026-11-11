@@ -9,7 +9,7 @@ Based on VPAT® 2.5 Rev 508 edition (Section 508). **Self-assessed** by the buil
 - **Standards:** Revised Section 508 (36 CFR 1194), which incorporates WCAG 2.0 A/AA. This report also covers WCAG 2.2 A/AA.
 
 ## Evaluation methods
-- **Automated:** axe-core 4.x on 17 screens and states (board, role, reminders, settings, the modal and menu states, and the empty, loading and error states) at 1280, 900, 414, 375 and 320 px, in light and dark: 170 runs with 0 violations at any impact that fail the build. The same script also checks for horizontal overflow and for controls under 44x44 px (`scripts/a11y.mjs`).
+- **Automated:** axe-core 4.x on 17 screens and states (board, role, reminders, settings, the modal and menu states, and the empty, loading and error states) at 1280, 900, 414, 375 and 320 px, in light and dark: 170 runs with 0 violations at any impact that fail the build. The same script also checks for horizontal overflow and for controls whose rendered box is under 44x44 px (`scripts/a11y.mjs`). It measures each control's rendered box, so it doesn't detect a hit area clipped by an ancestor's overflow: the Ember v0.2.2 stage and role tabs clip to 43px until the Ember tab patch lands (tracked as TRACKER-EMBER-BUMP).
 - **Keyboard and focus:** scripted keyboard-only flows in Chromium (`scripts/e2e.mjs`). They cover the skip link, focus on the H1 after a route change, the title on every route, scroll restore on Back, and dialog focus in and return on Esc.
 - **Lighthouse:** accessibility 100.
 - **Screen reader:** **not yet evaluated** with a screen reader. Until a reader pass is recorded in PROGRESS.md (naming the reader, browser and OS), items that depend on announcements, such as 4.1.3, rest on markup and automated checks only.
