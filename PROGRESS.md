@@ -67,3 +67,12 @@ Bumped ember-ui to v0.2.2 (Architecture review B-1, B-2): small buttons and chec
 ## 2026-11-10 6:36 PM PT: skip link 44px hit area (QA live-gate follow-up)
 - The "Skip to content" link was 40px tall. A `::before` now extends its hit area to 44px (2px above and below), the same technique as jdilig.me PR #25. There's no visual change: the link still draws at 136x40, and screenshots of it focused at 320px are pixel-identical before and after.
 - Checked: clicks 1.5px above and below the visible box now land on the link (before, they hit the header). Lint, typecheck, unit tests 15/15, axe 170 runs with 0 failing, and the e2e skip-link check passes.
+
+## 2026-11-10 7:11 PM PT: copy review must-fixes F4 to F6
+
+From the UI Copywriter's review (ux-projects/copy/JOB-TRACKER-COPY-REVIEW.md):
+- F4: the card age line now reads "Started interviewing 3 days ago" and "Got an offer 2 days ago" (STAGE_VERB in src/screens/Board.tsx), not "Interviewing since 3 days ago" and "Offer 2 days ago".
+- F5: the card button is "Move or edit", and its accessible name is "Move or edit {title} at {company}", so the visible text starts the name (2.5.3). docs/UX.md, docs/ACR.md, the unit test and scripts/a11y.mjs are updated to match.
+- F6: the clear-data dialog says "1 role" for a single role.
+- Commits are authored as John Dilig with an `Author-bot: Full Stack Developer` trailer from here on (CTE ruling).
+F1 to F3 are case-study copy on jdilig.me and go in a separate jdilig-me-v3 PR.

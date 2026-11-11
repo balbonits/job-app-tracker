@@ -39,7 +39,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 1.4.10 Reflow | AA | Supports | No horizontal page scroll at 320 CSS px, which the automated sweep checks. |
 | 1.4.11 Non-text Contrast | AA | Supports | Focus ring, input borders and control boundaries use Ember UI tokens checked at 3:1 or higher. |
 | 1.4.12 Text Spacing | AA | Supports | No fixed-height text containers. Text wraps. |
-| 1.4.13 Content on Hover or Focus | AA | Supports | No hover or focus pop-ups. The Actions panel is opened by a button and stays until dismissed. |
+| 1.4.13 Content on Hover or Focus | AA | Supports | No hover or focus pop-ups. The "Move or edit" panel is opened by a button and stays until dismissed. |
 | 2.1.1 Keyboard | A | Supports | Every function works by keyboard. The scripted keyboard-only flow is in scripts/e2e.mjs. |
 | 2.1.2 No Keyboard Trap | A | Supports | The native modal dialog keeps Tab inside while open, and Esc closes it. |
 | 2.1.4 Character Key Shortcuts | A | Not Applicable | No single-key shortcuts. |
@@ -49,7 +49,7 @@ Supports, Partially Supports, Does Not Support, Not Applicable (as defined by VP
 | 2.4.1 Bypass Blocks | A | Supports | The first Tab stop is a skip link, which moves focus to main without changing the route. |
 | 2.4.2 Page Titled | A | Supports | Each view sets a unique document title on every route change. |
 | 2.4.3 Focus Order | A | Supports | On a route change, focus moves to the new view's H1. Dialogs return focus to their opener. |
-| 2.4.4 Link Purpose (In Context) | A | Supports | Card links are the role title, and each Actions button names its role. |
+| 2.4.4 Link Purpose (In Context) | A | Supports | Card links are the role title, and each "Move or edit" button names its role. |
 | 2.4.5 Multiple Ways | AA | Supports | Roles are reachable from the board and from Reminders. Header navigation is on every view. |
 | 2.4.6 Headings and Labels | AA | Supports | Headings and labels are descriptive. |
 | 2.4.7 Focus Visible | AA | Supports | A 2px focus ring on every interactive element. |

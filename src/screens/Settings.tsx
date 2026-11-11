@@ -53,7 +53,7 @@ export function Settings() {
           </>
         }
       >
-        <p style={{ margin: 0 }}>This removes {data.roles.length} roles and their reminders from this device. It can't be undone, so export first if you want a copy.</p>
+        <p style={{ margin: 0 }}>This removes {data.roles.length} {data.roles.length === 1 ? 'role' : 'roles'} and their reminders from this device. It can't be undone, so export first if you want a copy.</p>
       </Modal>
     </>
   );

@@ -26,7 +26,7 @@ for (const width of [1280, 900, 414, 375, 320]) for (const scheme of ['light', '
     await p.goto(base + path, { waitUntil: 'networkidle' });
     await p.waitForTimeout(500);
     if (action === 'add') { await p.getByRole('button', { name: 'Add role' }).first().click(); await p.getByRole('button', { name: 'Save role' }).click(); }
-    if (action === 'menu') await p.getByRole('button', { name: /^Actions for/ }).first().click();
+    if (action === 'menu') await p.getByRole('button', { name: /^Move or edit / }).first().click();
     await p.waitForTimeout(250);
     await p.addScriptTag({ content: axe });
     const res = await p.evaluate(async () => {

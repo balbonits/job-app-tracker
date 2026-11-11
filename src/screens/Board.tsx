@@ -86,7 +86,7 @@ function CardList({ stage, roles }: { stage: Stage; roles: Role[] }) {
   );
 }
 
-const STAGE_VERB: Record<Stage, string> = { saved: 'Saved', applied: 'Applied', interviewing: 'Interviewing since', offer: 'Offer', closed: 'Closed' };
+const STAGE_VERB: Record<Stage, string> = { saved: 'Saved', applied: 'Applied', interviewing: 'Started interviewing', offer: 'Got an offer', closed: 'Closed' };
 
 export function RoleCard({ role }: { role: Role }) {
   const { data, moveRole, updateRole, deleteRole, restoreRole } = useStore();
@@ -105,8 +105,8 @@ export function RoleCard({ role }: { role: Role }) {
       <p className="jt-card-age">{STAGE_VERB[role.stage]} {since === 'today' ? 'today' : since}</p>
       {next && <p className="jt-chip">Reminder: {next.text}, {formatDay(next.due)}</p>}
       <div className="jt-card-actions">
-        <Button variant="ghost" aria-expanded={menu} aria-controls={menuId} aria-label={`Actions for ${role.title} at ${role.company}`} onClick={() => setMenu((o) => !o)}>
-          Actions
+        <Button variant="ghost" aria-expanded={menu} aria-controls={menuId} aria-label={`Move or edit ${role.title} at ${role.company}`} onClick={() => setMenu((o) => !o)}>
+          Move or edit
         </Button>
       </div>
       {menu && (
