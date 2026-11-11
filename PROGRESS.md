@@ -58,3 +58,8 @@ _Chief of Creatives adds their entries here._
 ## 2026-11-10 3:16 PM PT: Ember UI v0.2.2
 
 Bumped ember-ui to v0.2.2 (Architecture review B-1, B-2): small buttons and checkbox rows get 44px hit areas, and the Undo toast now stays until dismissed instead of timing out after 5s (WCAG 2.2.1). Unit 15/15, axe 170 runs 0 failing, e2e pass.
+
+## 2026-11-10 5:45 PM PT: R-8 repo conventions
+- Secret scan: gitleaks 8.28.0 over the full history (9 commits, up to 91cd7d1), findings redacted: **no leaks found**.
+- CI now runs gitleaks on every push and PR (`.github/workflows/gitleaks.yml`, full history), next to the existing check job (typecheck, lint, test, build, test:a11y, test:e2e).
+- Conventions confirmed: README, this PROGRESS.md, MIT LICENSE ("Copyright (c) 2026 John Dilig") and the ACR source at [docs/ACR.md](docs/ACR.md). History is real and unsquashed.
